@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace XML_tool
 {
-    class Compare
-    {
-       
+    class Compare {
+        Reader results = new Reader();
+
+
+        //public string[] CompareResult() {
+
+
+        //}
 
         public Compare() {
 

@@ -7,40 +7,26 @@ using System.Xml;
 
 namespace XML_tool {
     class XmlProcessing {
-        //TODO Check Class Improvement to process 2 Hash set Instead of two
-        public HashSet<string> xml1 = new HashSet<string>();
-        HashSet<string> xml2 = new HashSet<string>();
-        string path = "C:\\Users\\Public\\Documents\\310.xml";
-        XmlReaderSettings settings = new XmlReaderSettings {
-            DtdProcessing = DtdProcessing.Parse
-        };
+
+       
 
 
 
-        public void DisplayGroupDetails() {
+        //public void DisplayGroupDetails() {
 
-            Console.WriteLine(xml1.Count);
-            foreach (string element in xml1) {
-                Console.WriteLine(element);
-            }
-        }
+        //    Console.WriteLine(xml1.Count);
+        //    foreach (string element in xml1) {
+        //        Console.WriteLine(element);
+        //    }
+        //}
 
         //Read XML Elements and Call the method AddTagsToGroup
         //TODO Improve Method Removing Method Dependence
-        public void ReadXMLElements() {
-            XmlReader reader = XmlReader.Create(this.path, this.settings);
-            while (reader.Read()) {
-                if (reader.NodeType == XmlNodeType.Element) {
-                    //Console.WriteLine(reader.Name);
-                    AddTagsToGroup(reader.Name);
-                }
-            }
-
-        }
+     
 
         public void AddTagsToGroup(string TagName) {
             //Reader reader = new Reader("C:\\Users\\Public\\Documents\\310.xml");
-            this.xml1.Add(TagName);
+            //this.xml1.Add(TagName);
            }
     }
 }
