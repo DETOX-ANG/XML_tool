@@ -7,13 +7,15 @@ using System.Xml;
 
 namespace XML_tool {
     class XmlProcessing {
-
-        HashSet<string> xml1 = new HashSet<string>();
+        //TODO Check Class Improvement to process 2 Hash set Instead of two
+        public HashSet<string> xml1 = new HashSet<string>();
         HashSet<string> xml2 = new HashSet<string>();
         string path = "C:\\Users\\Public\\Documents\\310.xml";
         XmlReaderSettings settings = new XmlReaderSettings {
             DtdProcessing = DtdProcessing.Parse
         };
+
+
 
         public void DisplayGroupDetails() {
 
@@ -23,6 +25,8 @@ namespace XML_tool {
             }
         }
 
+        //Read XML Elements and Call the method AddTagsToGroup
+        //TODO Improve Method Removing Method Dependence
         public void ReadXMLElements() {
             XmlReader reader = XmlReader.Create(this.path, this.settings);
             while (reader.Read()) {
@@ -37,6 +41,6 @@ namespace XML_tool {
         public void AddTagsToGroup(string TagName) {
             //Reader reader = new Reader("C:\\Users\\Public\\Documents\\310.xml");
             this.xml1.Add(TagName);
-        }
+           }
     }
 }

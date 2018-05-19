@@ -11,11 +11,11 @@ namespace XML_tool
     {
         static void Main(string[] args)
         {
-            //XmlProcessing xmlProcessing = new XmlProcessing();
-            //xmlProcessing.ReadXMLElements();
+            XmlProcessing xmlProcessing = new XmlProcessing();
+            xmlProcessing.ReadXMLElements();
             //xmlProcessing.DisplayGroupDetails();
-            FileOutput fileOutput = new FileOutput();
-            fileOutput.WriteFile();
+            FileOutput fileOutput = new FileOutput(xmlProcessing.xml1);
+            
             Console.ReadKey();
         }
     }

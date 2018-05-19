@@ -6,15 +6,22 @@ using System.Threading.Tasks;
 using System.IO;
 namespace XML_tool {
     class FileOutput {
-        
-        
-        
 
-        public void WriteFile() {
-            FileStream file = new FileStream("C:\\Users\\Public\\Documents\\Teste.txt", FileMode.OpenOrCreate);
+        FileStream file = new FileStream("C:\\Users\\Public\\Documents\\Teste.txt", FileMode.OpenOrCreate);
+
+        public FileOutput(HashSet<string> ProcResults) {
+            WriteFile(ProcResults);
+        }
+        
+        public void WriteFile(HashSet<string> tags) {
             StreamWriter writer = new StreamWriter(file);
-            writer.WriteLine("Angelo Rocha\n Angelo AAAA");
-            writer.WriteLine("Angelo AAAA");
+
+            foreach (string item in tags) {
+                Console.WriteLine(item);
+                writer.WriteLine(item);
+            }
+            
+    
             writer.Flush();
             writer.Close();
             
