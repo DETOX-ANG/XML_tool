@@ -11,8 +11,11 @@ namespace XML_tool
     {
         static void Main(string[] args)
         {
-            Reader reader = new Reader("C:\\Users\\ARocha2\\Documents\\Avalara\\310.xml");
-
+            //XmlProcessing xmlProcessing = new XmlProcessing();
+            //xmlProcessing.ReadXMLElements();
+            //xmlProcessing.DisplayGroupDetails();
+            FileOutput fileOutput = new FileOutput();
+            fileOutput.WriteFile();
             Console.ReadKey();
         }
     }

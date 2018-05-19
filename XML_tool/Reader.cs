@@ -8,18 +8,15 @@ namespace XML_tool
 {
     class Reader
     {
-        HashSet<string>[] XmlFile;
         
-        
-        
-
         public Reader(string path) {
 
-            XmlReaderSettings settings = new XmlReaderSettings();
-            settings.DtdProcessing = DtdProcessing.Parse;
-            XmlReader reader = XmlReader.Create(path, settings);
-            
-            while (reader.Read())
+      
+            }
+
+
+        /*TODO
+         *             while (reader.Read())
             {
                 switch (reader.NodeType)
                 {
@@ -34,8 +31,7 @@ namespace XML_tool
                 
                 
             }
-        }
-
+         * */
 
 
     }

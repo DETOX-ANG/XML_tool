@@ -8,6 +8,13 @@ namespace XML_tool
 {
     class Compare
     {
-        HashSet<string> xml1 = new HashSet<string>();
+       
+
+        public Compare() {
+
+            
+            
+        }
+        
     }
 }
