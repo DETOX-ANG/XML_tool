@@ -9,13 +9,11 @@ namespace XML_tool {
     class Reader {
 
         //Atributes Settings
-        
         XmlReaderSettings settings = new XmlReaderSettings {DtdProcessing = DtdProcessing.Parse};
-        int ElementCount = 0;
-        string[] TagElements;
         XmlReader[] xmlReader = new XmlReader[2];
         public HashSet<string>[] xml = new HashSet<string>[2];
 
+        //Construtor Com Parâmetro de Path para inicializar os arrays
         public Reader(string[] path) {
             for (int i = 0; i < xmlReader.Length; i++) {
                 this.xmlReader[i] = XmlReader.Create(path[i], this.settings);
@@ -23,22 +21,20 @@ namespace XML_tool {
             }
         }
 
+        //Construtor Simples
         public Reader() { }
 
-      public void ReadXMLElements() {
+        //TODO Remover atividade "Add elementos no conjunto" do método de leitura, para não tirar o objetivo do método
+      public HashSet<string>[] ReadXMLElements() {
             for (int i = 0; i < xmlReader.Length; i++) {
                 while (this.xmlReader[i].Read()) {
                     if (xmlReader[i].NodeType == XmlNodeType.Element) {
                         xml[i].Add(xmlReader[i].Name);
-                        ElementCount++;
                     }
                 }
             }
-
-            Console.WriteLine(xml[0].Count);
-            Console.WriteLine(xml[1].Count);
-            Console.WriteLine(ElementCount);
-        }
+            return xml;
+      }
 
     
 

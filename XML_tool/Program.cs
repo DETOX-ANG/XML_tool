@@ -13,11 +13,8 @@ namespace XML_tool
 
         string[] path = new string[2] { "C:\\Users\\Public\\Documents\\310.xml", "C:\\Users\\Public\\Documents\\n40.xml "};
         Reader reader = new Reader(path);
-        reader.ReadXMLElements();
-            //XmlProcessing xmlProcessing = new XmlProcessing();
-            //xmlProcessing.AddTagsToGroup(xmlreader.Name);
-            //xmlProcessing.DisplayGroupDetails();
-            //FileOutput fileOutput = new FileOutput(xmlProcessing.xml1);
+        Compare compare = new Compare(reader);
+        FileOutput fileOutput = new FileOutput(compare);
 
             Console.ReadKey();
          }

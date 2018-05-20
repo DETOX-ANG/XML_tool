@@ -9,14 +9,18 @@ namespace XML_tool {
 
         FileStream file = new FileStream("C:\\Users\\Public\\Documents\\Teste.txt", FileMode.OpenOrCreate);
 
+        public FileOutput (Compare compare) {
+
+            WriteFile(compare.GetCompareResults());
+        }
+
         public FileOutput(HashSet<string> ProcResults) {
-            WriteFile(ProcResults);
+            //WriteFile(ProcResults);
         }
         
-        public void WriteFile(HashSet<string> tags) {
+        public void WriteFile(string[] value) {
             StreamWriter writer = new StreamWriter(file);
-
-            foreach (string item in tags) {
+            foreach (string item in value) {
                 Console.WriteLine(item);
                 writer.WriteLine(item);
             }
